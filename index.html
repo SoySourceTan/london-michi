@@ -6,10 +6,15 @@
     <title>ロンドン観光ガイド</title>
     <!-- Bootstrap 5.3.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css" rel="stylesheet">
     <!-- カスタムCSS -->
     <style>
         body {
             background-color: #f8f9fa;
+            font-family: 'Lato', sans-serif;
         }
         .navbar {
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -39,6 +44,60 @@
         .map-container {
             height: 500px;
             width: 100%;
+        }
+        /* Bonus Section Styles */
+        .bonus-section {
+            background: linear-gradient(rgba(26,60,52,0.1), rgba(26,60,52,0.1)), #F5F5F5;
+            padding: 40px 0;
+            border-top: 2px solid #D4A017;
+            border-bottom: 2px solid #D4A017;
+        }
+        .bonus-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: #1A3C34;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .bonus-section .accordion-button {
+            background-color: #1A3C34;
+            color: #F5F5F5;
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+        }
+        .bonus-section .accordion-button:not(.collapsed) {
+            background-color: #D4A017;
+            color: #1A3C34;
+        }
+        .bonus-section .accordion-button::after {
+            filter: brightness(0) invert(1);
+        }
+        .bonus-section .card {
+            border: none;
+            background-color: #F5F5F5;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .bonus-section .card-title {
+            color: #1A3C34;
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+        }
+        .bonus-section .card-text {
+            color: #333;
+            font-size: 16px;
+        }
+        .bonus-section .btn {
+            background-color: #D4A017;
+            border-color: #D4A017;
+            color: #1A3C34;
+        }
+        .bonus-section .btn:hover {
+            background-color: #1A3C34;
+            border-color: #1A3C34;
+            color: #F5F5F5;
+        }
+        .bonus-section .fa-beer-mug-empty, .bonus-section .fa-fish {
+            color: #D4A017;
+            margin-right: 8px;
         }
     </style>
 </head>
@@ -278,8 +337,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img src="https://placehold.co/300x200?text=Piccadilly+Circus" class="card-img-top" alt="Piccadilly Circus">
-                        <div class="card-body">
+                        <img src="https://placehold.co/300x200?text=Piccadilly+Circus" class="card-img-top" align-middle>
                             <h5 class="card-title">Piccadilly Circus</h5>
                             <p class="card-text">ロンドンの中心！銀座のような賑やかなエリア。</p>
                             <a href="https://www.google.com/maps/place/Piccadilly+Circus/@51.5100,-0.1345,17z" class="btn map-btn" target="_blank">地図を見る</a>
@@ -304,6 +362,237 @@
                             <h5 class="card-title">The Castle</h5>
                             <p class="card-text">ファリンドンの伝統的なヴィクトリア朝のパブ。Young’sのエールと心温まるパブ料理が楽しめ、Smithfield Market近くの居心地良いスポット。</p>
                             <a href="https://www.google.com/maps/place/The+Castle/@51.5200,-0.1036,17z" class="btn map-btn" target="_blank">地図を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- おまけ情報：Fish & Chipsパブ -->
+        <section id="bonus-section" class="bonus-section mb-5">
+            <h2 class="mb-4">おまけ情報：Fish & Chipsが美味しいパブ20選</h2>
+            <div class="container">
+                <div class="accordion" id="pubAccordion">
+                    <!-- Canary Wharf -->
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="headingCanaryWharf">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCanaryWharf" aria-expanded="false" aria-controls="collapseCanaryWharf">
+                                Canary Wharf周辺
+                            </button>
+                        </h3>
+                        <div id="collapseCanaryWharf" class="accordion-collapse collapse" aria-labelledby="headingCanaryWharf" data-bs-parent="#pubAccordion">
+                            <div class="accordion-body">
+                                <div class="row g-4">
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Grapes</h5>
+                                                <p class="card-text"><strong>住所:</strong> 76 Narrow St, Limehouse, London E14 8BP<br>テムズ川沿いの歴史あるパブ（1583年創業）。新鮮なタラのFish & Chips（£12）はサクサクの衣と自家製タルタルソースが絶品。Young’sエール（£4.50）が人気。</p>
+                                                <a href="https://www.google.com/maps/place/The+Grapes/@51.5088,-0.0347,17z" class="btn" target="_blank">地図を見る</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Gun</h5>
+                                                <p class="card-text"><strong>住所:</strong> 27 سردحربور، لندن E14 9NS<br>ドックランズのモダンなガストロパブ。Fish & Chips（£13）はハドック使用、モルトビネガーが効いた伝統的な味わい。クラフトビール（£5）が豊富。</p>
+                                                <a href="https://www.google.com/maps/place/The+Gun/@51.5010,-0.0060,17z" class="btn" target="_blank">地図を見る</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Narrow</h5>
+                                                <p class="card-text"><strong>住所:</strong> 44 Narrow St, Limehouse, London E14 8DP<br>Gordon Ramsay運営の川沿いパブ。Fish & Chips（£14）は新鮮な魚と手切りポテトが特徴。Fuller’sエール（£4.80）が手頃。</p>
+                                                <a href="https://www.google.com/maps/place/The+Narrow/@51.5090,-0.0350,17z" class="btn" target="_blank">地図を見る</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Ledger Building</h5>
+                                                <p class="card-text"><strong>住所:</strong> 4 Hertsmere Rd, London E14 4AL<br>Wetherspoon運営の広々としたパブ。Fish & Chips（£9）はコスパ抜群で、タラの大判フライが人気。ビールは£4から。</p>
+                                                <a href="https://www.google.com/maps/place/The+Ledger+Building/@51.5075,-0.0260,17z" class="btn" target="_blank">地図を見る</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Ferry House</h5>
+                                                <p class="card-text"><strong>住所:</strong> 26 Ferry St, London E14 3DT<br>Isle of Dogsのコミュニティパブ。Fish & Chips（£11）は地元で評判の軽い衣が特徴。Beavertownビール（£5）が揃う。</p>
+                                                <a href="https://www.google.com/maps/place/The+Ferry+House/@51.4930,-0.0110,17z" class="btn" target="_blank">地図を見る</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Hope and Anchor</h5>
+                                                <p class="card-text"><strong>住所:</strong> 14 New Crane Pl, London E1W 3TS<br>隠れ家的なパブで、Fish & Chips（£12）は地元産の魚を使用。CAMRA推薦のエール（£4.50）が魅力。</p>
+                                                <a href="https://www.google.com/maps/place/The+Hope+and+Anchor/@51.5030,-0.0450,17z" class="btn" target="_blank">地図を見る</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Waterloo -->
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="headingWaterloo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWaterloo" aria-expanded="false" aria-controls="collapseWaterloo">
+                                Waterloo周辺
+                            </button>
+                        </h3>
+                        <div id="collapseWaterloo" class="accordion-collapse collapse" aria-labelledby="headingWaterloo" data-bs-parent="#pubAccordion">
+                            <div class="accordion-body">
+                                <div class="row g-4">
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Anchor & Hope</h5>
+                                                <p class="card-text"><strong>住所:</strong> 36 The Cut, London SE1 8LP<br>Waterloo駅近くのガストロパブ。Fish & Chips（£13）はサクサクの衣と新鮮なタラが自慢。クラフトビール（£5）が豊富。</p>
+                                                <a href="https://www.google.com/maps/place/The+Anchor+%26+Hope/@51.5035,-0.1060,17z" class="btn" target="_blank">地図を見る</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Kings Arms</h5>
+                                                <p class="card-text"><strong>住所:</strong> 25 Roupell St, London SE1 8TB<br>静かな住宅街の伝統パブ。Fish & Chips（£11）は手頃で、モルトビネガーとマッシーピーズが付く。Fuller’sエール（£4.50）が人気。</p>
+                                                <a href="https://www.google.com/maps/place/The+Kings+Arms/@51.5040,-0.1110,17z" class="btn" target="_blank">地図を見る</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The White Hart</h5>
+                                                <p class="card-text"><strong>住所:</strong> 29 Cornwall Rd, London SE1 8TJ<br>Waterloo駅から徒歩5分のローカルパブ。Fish & Chips（£10）はコスパ良く、タルタルソースが評判。ビールは£4から。</p>
+                                                <a href="https://www.google.com/maps/place/The+White+Hart/@51.5030,-0.1100,17z" class="btn" target="_blank">地図を見る</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Windmill</h5>
+                                                <p class="card-text"><strong>住所:</strong> 86 The Cut, London SE1 8LW<br>劇場近くの活気あるパブ。Fish & Chips（£12）はハドックのふわっとした身が特徴。Young’sビール（£4.80）が手頃。</p>
+                                                <a href="https://www.google.com/maps/place/The+Windmill/@51.5025,-0.1070,17z" class="btn" target="_blank">地図を見る</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Fire Station</h5>
+                                                <p class="card-text"><strong>住所:</strong> 150 Waterloo Rd, London SE1 8SB<br>旧消防署を改装したモダンパブ。Fish & Chips（£13）は洗練された盛り付けで、クラフトビール（£5）と相性抜群。</p>
+                                                <a href="https://www.google.com/maps/place/The+Fire+Station/@51.5020,-0.1080,17z" class="btn" target="_blank">地図を見る</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Wellington</h5>
+                                                <p class="card-text"><strong>住所:</strong> 81-83 Waterloo Rd, London SE1 8UD<br>Waterloo駅前のクラシックパブ。Fish & Chips（£11）はボリューム満点で、地元客に愛される。エール（£4.50）が豊富。</p>
+                                                <a href="https://www.google.com/maps/place/The+Wellington/@51.5030,-0.1090,17z" class="btn" target="_blank">地図を見る</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- その他 -->
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="headingOthers">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOthers" aria-expanded="false" aria-controls="collapseOthers">
+                                その他のロンドンエリア
+                            </button>
+                        </h3>
+                        <div id="collapseOthers" class="accordion-collapse collapse" aria-labelledby="headingOthers" data-bs-parent="#pubAccordion">
+                            <div class="accordion-body">
+                                <div class="row g-4">
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Mayflower</h5>
+                                                <p class="card-text"><strong>住所:</strong> 117 Rotherhithe St, London SE16 4NF<br>1620年創業の歴史的パブ。Fish & Chips（£12）は新鮮な魚と手切りポテトが魅力。CAMRAエール（£4.50）が人気。</p>
+                                                <a href="https://www.google.com/maps/place/The+Mayflower/@51.5000,-0.0500,17z" class="btn" target="_blank">地図を見る</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The George Inn</h5>
+                                                <p class="card-text"><strong>住所:</strong> 75 Borough High St, London SE1 1NH<br>シェイクスピア時代のパブ。Fish & Chips（£12）は伝統的なレシピで、地元客に評判。Greene Kingエール（£4.80）が手頃。</p>
+                                                <a href="https://www.google.com/maps/place/The+George+Inn/@51.5040,-0.0900,17z" class="btn" target="_blank">地図を見る</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Dog and Bell</h5>
+                                                <p class="card-text"><strong>住所:</strong> 116 Prince St, London SE8 3JD<br>Deptfordのコミュニティパブ。Fish & Chips（£10）はコスパ良く、サクサクの衣が人気。エール（£4）が豊富。</p>
+                                                <a href="https://www.google.com/maps/place/The+Dog+and+Bell/@51.4810,-0.0240,17z" class="btn" target="_blank">地図を見る</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Southampton Arms</h5>
+                                                <p class="card-text"><strong>住所:</strong> 139 Highgate Rd, London NW5 1LE<br>Kentish Townの受賞歴あるパブ。Fish & Chips（£11）は地元産の魚を使用。クラフトビール（£5）が豊富。</p>
+                                                <a href="https://www.google.com/maps/place/The+Southampton+Arms/@51.5540,-0.1380,17z" class="btn" target="_blank">地図を見る</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Faltering Fullback</h5>
+                                                <p class="card-text"><strong>住所:</strong> 19 Perth Rd, London N4 3HB<br>Finsbury Parkのアイリッシュパブ。Fish & Chips（£12）はボリューム満点。ギネス（£4.80）と地元エールが人気。</p>
+                                                <a href="https://www.google.com/maps/place/The+Faltering+Fullback/@51.5630,-0.1090,17z" class="btn" target="_blank">地図を見る</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Dove</h5>
+                                                <p class="card-text"><strong>住所:</strong> 19 Upper Mall, London W6 9TA<br>Hammersmithの川沿いパブ。Fish & Chips（£13）は繊細な衣と新鮮なタラが特徴。Fuller’sエール（£4.50）が揃う。</p>
+                                                <a href="https://www.google.com/maps/place/The+Dove/@51.4900,-0.2350,17z" class="btn" target="_blank">地図を見る</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Ship</h5>
+                                                <p class="card-text"><strong>住所:</strong> 41 Jews Row, London SW18 1TB<br>Wandsworthのテムズ川沿いのパブ。Fish & Chips（£12）は地元で評判。Young’sビール（£4.80）が手頃。</p>
+                                                <a href="https://www.google.com/maps/place/The+Ship/@51.4600,-0.1900,17z" class="btn" target="_blank">地図を見る</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Alma Tavern</h5>
+                                                <p class="card-text"><strong>住所:</strong> 95 Church Rd, London SE19 2TA<br>Crystal Palaceの地元パブ。Fish & Chips（£11）はシンプルで美味しい。エール（£4.50）が豊富。</p>
+                                                <a href="https://www.google.com/maps/place/The+Alma+Tavern/@51.4170,-0.0780,17z" class="btn" target="_blank">地図を見る</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
