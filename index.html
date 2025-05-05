@@ -36,10 +36,6 @@
             background-color: #218838;
             border-color: #1e7e34;
         }
-        #map {
-            height: 500px;
-            width: 100%;
-        }
     </style>
 </head>
 <body>
@@ -287,129 +283,14 @@
                 </div>
             </div>
         </section>
-
-        <!-- 地図セクション -->
-        <section id="map-section" class="mb-5">
-            <h2 class="mb-4">ロンドン観光スポット地図</h2>
-            <div class="card">
-                <div class="card-body">
-                    <div id="map"></div>
-                </div>
-            </div>
-        </section>
     </div>
 
     <!-- フッター -->
     <footer class="bg-dark text-white text-center py-3">
-        <p>© 2025 ロンドン観光ガイド. All rights reserved.</p>
+        <p>&copy; 2025 ロンドン観光ガイド. All rights reserved.</p>
     </footer>
 
     <!-- Bootstrap 5.3.3 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <!-- Google Maps API -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlE4xgMJKjU2N43noMEqIw7GdXGTER8bA&callback=initMap"></script>
-    <script>
-        function initMap() {
-            // 地図の中心をロンドンに設定
-            const london = { lat: 51.5074, lng: -0.1278 };
-            const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 11,
-                center: london,
-            });
-
-            // スポットのデータ
-            const spots = [
-                {
-                    name: "Euston",
-                    lat: 51.5286,
-                    lng: -0.1331,
-                    description: "大英博物館やロンドン大学近くのエリア。コーニッスパスティが名物。"
-                },
-                {
-                    name: "Covent Garden",
-                    lat: 51.5118,
-                    lng: -0.1234,
-                    description: "SOHOやテムズ川散策に最適。GAIL's Bakeryで美味しいパンを。"
-                },
-                {
-                    name: "Hyde Park",
-                    lat: 51.5073,
-                    lng: -0.1657,
-                    description: "緑豊かな公園。ロイヤル・アルバート・ホールも近く。"
-                },
-                {
-                    name: "Paddington",
-                    lat: 51.5168,
-                    lng: -0.1760,
-                    description: "パディントン駅と魅力的な路地が特徴。"
-                },
-                {
-                    name: "Camden Town",
-                    lat: 51.5390,
-                    lng: -0.1426,
-                    description: "運河沿いの古着屋が集まる賑やかなエリア。"
-                },
-                {
-                    name: "Hampstead Heath",
-                    lat: 51.5607,
-                    lng: -0.1653,
-                    description: "高級住宅街の広大な公園。散策に最適。"
-                },
-                {
-                    name: "Sherlock Holmes Museum",
-                    lat: 51.5238,
-                    lng: -0.1586,
-                    description: "シャーロック・ホームズファン必見の博物館。"
-                },
-                {
-                    name: "Abbey Road Studios",
-                    lat: 51.5319,
-                    lng: -0.1783,
-                    description: "ビートルズの名盤が生まれたスタジオ。"
-                },
-                {
-                    name: "Greenwich",
-                    lat: 51.4831,
-                    lng: -0.0045,
-                    description: "世界標準時の街。ユネスコ世界遺産の港町。"
-                },
-                {
-                    name: "Golders Green",
-                    lat: 51.5723,
-                    lng: -0.1939,
-                    description: "著名人が眠る霊園があるエリア。"
-                },
-                {
-                    name: "Piccadilly Circus",
-                    lat: 51.5101,
-                    lng: -0.1347,
-                    description: "ロンドンの中心。賑やかなショッピングエリア。"
-                },
-                {
-                    name: "Portobello Road Market",
-                    lat: 51.5157,
-                    lng: -0.2041,
-                    description: "ノッティングヒルのアンティークマーケット。"
-                }
-            ];
-
-            // マーカーと情報ウィンドウを追加
-            spots.forEach(spot => {
-                const marker = new google.maps.Marker({
-                    position: { lat: spot.lat, lng: spot.lng },
-                    map: map,
-                    title: spot.name
-                });
-
-                const infowindow = new google.maps.InfoWindow({
-                    content: `<h6>${spot.name}</h6><p>${spot.description}</p>`
-                });
-
-                marker.addListener("click", () => {
-                    infowindow.open(map, marker);
-                });
-            });
-        }
-    </script>
 </body>
 </html>
