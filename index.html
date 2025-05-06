@@ -11,95 +11,138 @@
     <!-- Font Awesome -->
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css" rel="stylesheet">
     <!-- カスタムCSS -->
-    <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Lato', sans-serif;
-        }
-        .navbar {
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1200x400?text=London+Skyline');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-        }
-        .card {
-            transition: transform 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        .map-btn {
-            background-color: #28a745;
-            border-color: #28a745;
-        }
-        .map-btn:hover {
-            background-color: #218838;
-            border-color: #1e7e34;
-        }
-        .map-container {
-            height: 500px;
-            width: 100%;
-        }
-        /* Bonus Section Styles */
-        .bonus-section {
-            background: linear-gradient(rgba(26,60,52,0.1), rgba(26,60,52,0.1)), #F5F5F5;
-            padding: 40px 0;
-            border-top: 2px solid #D4A017;
-            border-bottom: 2px solid #D4A017;
-        }
-        .bonus-section h2 {
-            font-family: 'Playfair Display', serif;
-            color: #1A3C34;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .bonus-section .accordion-button {
-            background-color: #1A3C34;
-            color: #F5F5F5;
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-        }
-        .bonus-section .accordion-button:not(.collapsed) {
-            background-color: #D4A017;
-            color: #1A3C34;
-        }
-        .bonus-section .accordion-button::after {
-            filter: brightness(0) invert(1);
-        }
-        .bonus-section .card {
-            border: none;
-            background-color: #F5F5F5;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        .bonus-section .card-title {
-            color: #1A3C34;
-            font-family: 'Playfair Display', serif;
-            font-size: 18px;
-        }
-        .bonus-section .card-text {
-            color: #333;
-            font-size: 16px;
-        }
-        .bonus-section .btn {
-            background-color: #D4A017;
-            border-color: #D4A017;
-            color: #1A3C34;
-        }
-        .bonus-section .btn:hover {
-            background-color: #1A3C34;
-            border-color: #1A3C34;
-            color: #F5F5F5;
-        }
-        .bonus-section .fa-beer-mug-empty, .bonus-section .fa-fish {
-            color: #D4A017;
-            margin-right: 8px;
-        }
-    </style>
+<style>
+    body {
+        background-color: #f5f5ef; /* 羊皮紙のようなオフホワイト */
+        font-family: 'Garamond', serif; /* クラシックなセリフ体 */
+        color: #2e2e2e;
+    }
+    .navbar {
+        background-color: #355e3b; /* 深緑（イングランドの森をイメージ） */
+        box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        font-family: 'Cinzel', serif; /* 王室的なフォント */
+    }
+    .navbar .navbar-brand, .navbar .nav-link {
+        color: #d4af37; /* ゴールド */
+    }
+    .navbar .nav-link:hover {
+        color: #ffffff;
+    }
+    .hero {
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://placehold.co/1200x400?text=Thames+River+at+Dusk');
+        background-size: cover;
+        background-position: center;
+        color: #ffffff;
+        padding: 120px 0;
+        text-align: center;
+        font-family: 'Cinzel', serif;
+        border-bottom: 3px solid #d4af37; /* ゴールドの縁取り */
+    }
+    .hero h1 {
+        font-size: 3.5rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    .card {
+        background-color: #faf8f0; /* クリーム色の背景 */
+        border: 1px solid #d4af37; /* ゴールドのボーダー */
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border-radius: 8px;
+    }
+    .card:hover {
+        transform: scale(1.02); /* 控えめなスケールアップ */
+        box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    }
+    .card-title {
+        font-family: 'Cinzel', serif;
+        color: #6b2d3c; /* バーガンディ */
+    }
+    .card-text {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #2e2e2e;
+    }
+    .map-btn {
+        background-color: #6b2d3c; /* バーガンディ */
+        border-color: #6b2d3c;
+        color: #ffffff;
+        border-radius: 5px;
+        font-family: 'Cinzel', serif;
+    }
+    .map-btn:hover {
+        background-color: #d4af37; /* ゴールド */
+        border-color: #d4af37;
+        color: #2e2e2e;
+    }
+    .map-container {
+        height: 500px;
+        width: 100%;
+        border: 2px solid #d4af37;
+        border-radius: 8px;
+    }
+    /* Bonus Section Styles */
+    .bonus-section {
+        background: linear-gradient(rgba(53,94,59,0.1), rgba(53,94,59,0.1)), url('https://placehold.co/1200x400?text=Wood+Texture'); /* 木目調背景 */
+        background-size: cover;
+        padding: 50px 0;
+        border-top: 3px solid #d4af37;
+        border-bottom: 3px solid #d4af37;
+    }
+    .bonus-section h2 {
+        font-family: 'Cinzel', serif;
+        color: #355e3b; /* 深緑 */
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2.5rem;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+    .bonus-section .accordion-button {
+        background-color: #355e3b; /* 深緑 */
+        color: #ffffff;
+        font-family: 'Cinzel', serif;
+        font-size: 1.25rem;
+        border: 1px solid #d4af37;
+    }
+    .bonus-section .accordion-button:not(.collapsed) {
+        background-color: #6b2d3c; /* バーガンディ */
+        color: #d4af37; /* ゴールド */
+    }
+    .bonus-section .accordion-button::after {
+        filter: brightness(0) invert(1);
+    }
+    .bonus-section .card {
+        border: 1px solid #d4af37;
+        background-color: #faf8f0; /* クリーム色 */
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 8px;
+    }
+    .bonus-section .card-title {
+        color: #6b2d3c; /* バーガンディ */
+        font-family: 'Cinzel', serif;
+        font-size: 1.2rem;
+    }
+    .bonus-section .card-text {
+        color: #2e2e2e;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    .bonus-section .btn {
+        background-color: #355e3b; /* 深緑 */
+        border-color: #355e3b;
+        color: #ffffff;
+        border-radius: 5px;
+        font-family: 'Cinzel', serif;
+    }
+    .bonus-section .btn:hover {
+        background-color: #d4af37; /* ゴールド */
+        border-color: #d4af37;
+        color: #2e2e2e;
+    }
+    .bonus-section .fa-beer-mug-empty, .bonus-section .fa-fish {
+        color: #d4af37; /* ゴールド */
+        margin-right: 8px;
+    }
+</style>
 </head>
 <body>
     <!-- ナビゲーションバー -->
