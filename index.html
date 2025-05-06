@@ -7,146 +7,171 @@
     <!-- Bootstrap 5.3.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&family=EB+Garamond:wght@400;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css" rel="stylesheet">
     <!-- カスタムCSS -->
-<style>
-    body {
-        background-color: #f5f5ef; /* 羊皮紙のようなオフホワイト */
-        font-family: 'Garamond', serif; /* クラシックなセリフ体 */
-        color: #2e2e2e;
-    }
-    .navbar {
-        background-color: #355e3b; /* 深緑（イングランドの森をイメージ） */
-        box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-        font-family: 'Cinzel', serif; /* 王室的なフォント */
-    }
-    .navbar .navbar-brand, .navbar .nav-link {
-        color: #d4af37; /* ゴールド */
-    }
-    .navbar .nav-link:hover {
-        color: #ffffff;
-    }
-    .hero {
-        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://placehold.co/1200x400?text=Thames+River+at+Dusk');
-        background-size: cover;
-        background-position: center;
-        color: #ffffff;
-        padding: 120px 0;
-        text-align: center;
-        font-family: 'Cinzel', serif;
-        border-bottom: 3px solid #d4af37; /* ゴールドの縁取り */
-    }
-    .hero h1 {
-        font-size: 3.5rem;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    }
-    .card {
-        background-color: #faf8f0; /* クリーム色の背景 */
-        border: 1px solid #d4af37; /* ゴールドのボーダー */
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        transition: transform 0.3s, box-shadow 0.3s;
-        border-radius: 8px;
-    }
-    .card:hover {
-        transform: scale(1.02); /* 控えめなスケールアップ */
-        box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-    }
-    .card-title {
-        font-family: 'Cinzel', serif;
-        color: #6b2d3c; /* バーガンディ */
-    }
-    .card-text {
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #2e2e2e;
-    }
-    .map-btn {
-        background-color: #6b2d3c; /* バーガンディ */
-        border-color: #6b2d3c;
-        color: #ffffff;
-        border-radius: 5px;
-        font-family: 'Cinzel', serif;
-    }
-    .map-btn:hover {
-        background-color: #d4af37; /* ゴールド */
-        border-color: #d4af37;
-        color: #2e2e2e;
-    }
-    .map-container {
-        height: 500px;
-        width: 100%;
-        border: 2px solid #d4af37;
-        border-radius: 8px;
-    }
-    /* Bonus Section Styles */
-    .bonus-section {
-        background: linear-gradient(rgba(53,94,59,0.1), rgba(53,94,59,0.1)), url('https://placehold.co/1200x400?text=Wood+Texture'); /* 木目調背景 */
-        background-size: cover;
-        padding: 50px 0;
-        border-top: 3px solid #d4af37;
-        border-bottom: 3px solid #d4af37;
-    }
-    .bonus-section h2 {
-        font-family: 'Cinzel', serif;
-        color: #355e3b; /* 深緑 */
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 2.5rem;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    }
-    .bonus-section .accordion-button {
-        background-color: #355e3b; /* 深緑 */
-        color: #ffffff;
-        font-family: 'Cinzel', serif;
-        font-size: 1.25rem;
-        border: 1px solid #d4af37;
-    }
-    .bonus-section .accordion-button:not(.collapsed) {
-        background-color: #6b2d3c; /* バーガンディ */
-        color: #d4af37; /* ゴールド */
-    }
-    .bonus-section .accordion-button::after {
-        filter: brightness(0) invert(1);
-    }
-    .bonus-section .card {
-        border: 1px solid #d4af37;
-        background-color: #faf8f0; /* クリーム色 */
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        border-radius: 8px;
-    }
-    .bonus-section .card-title {
-        color: #6b2d3c; /* バーガンディ */
-        font-family: 'Cinzel', serif;
-        font-size: 1.2rem;
-    }
-    .bonus-section .card-text {
-        color: #2e2e2e;
-        font-size: 1rem;
-        line-height: 1.6;
-    }
-    .bonus-section .btn {
-        background-color: #355e3b; /* 深緑 */
-        border-color: #355e3b;
-        color: #ffffff;
-        border-radius: 5px;
-        font-family: 'Cinzel', serif;
-    }
-    .bonus-section .btn:hover {
-        background-color: #d4af37; /* ゴールド */
-        border-color: #d4af37;
-        color: #2e2e2e;
-    }
-    .bonus-section .fa-beer-mug-empty, .bonus-section .fa-fish {
-        color: #d4af37; /* ゴールド */
-        margin-right: 8px;
-    }
-</style>
+    <style>
+        body {
+            background-color: #f5f5ef;
+            font-family: 'EB Garamond', serif;
+            color: #2e2e2e;
+        }
+        .navbar {
+            background-color: #355e3b;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+            font-family: 'Cinzel', serif;
+        }
+        .navbar .navbar-brand, .navbar .nav-link {
+            color: #d4af37;
+        }
+        .navbar .nav-link:hover {
+            color: #ffffff;
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://placehold.co/1200x400?text=Thames+River+at+Dusk');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
+            padding: 120px 0;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            border-bottom: 3px solid #d4af37;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .card {
+            background-color: #faf8f0;
+            border: 1px solid #d4af37;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3), 0 0 10px rgba(212,175,55,0.5);
+        }
+        .card-title {
+            font-family: 'Cinzel', serif;
+            color: #6b2d3c;
+        }
+        .card-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #2e2e2e;
+        }
+        .map-btn {
+            background-color: #6b2d3c;
+            border-color: #6b2d3c;
+            color: #ffffff;
+            border-radius: 5px;
+            font-family: 'Cinzel', serif;
+        }
+        .map-btn:hover {
+            background-color: #d4af37;
+            border-color: #d4af37;
+            color: #2e2e2e;
+        }
+        .map-container {
+            height: 500px;
+            width: 100%;
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+        }
+        /* Bonus Section Styles */
+        .bonus-section {
+            background: linear-gradient(rgba(53,94,59,0.1), rgba(53,94,59,0.1)), url('https://placehold.co/1200x400?text=Wood+Texture');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 50px 0;
+            border-top: 3px solid #d4af37;
+            border-bottom: 3px solid #d4af37;
+        }
+        .bonus-section h2 {
+            font-family: 'Cinzel', serif;
+            color: #355e3b;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        .bonus-section .accordion-button {
+            background-color: #355e3b;
+            color: #ffffff;
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            border: 1px solid #d4af37;
+        }
+        .bonus-section .accordion-button:not(.collapsed) {
+            background-color: #6b2d3c;
+            color: #d4af37;
+        }
+        .bonus-section .accordion-button::after {
+            filter: brightness(0) invert(1);
+        }
+        .bonus-section .card {
+            border: 1px solid #d4af37;
+            background-color: #faf8f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-radius: 8px;
+        }
+        .bonus-section .card-title {
+            color: #6b2d3c;
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+        }
+        .bonus-section .card-text {
+            color: #2e2e2e;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .bonus-section .btn {
+            background-color: #355e3b;
+            border-color: #355e3b;
+            color: #ffffff;
+            border-radius: 5px;
+            font-family: 'Cinzel', serif;
+        }
+        .bonus-section .btn:hover {
+            background-color: #d4af37;
+            border-color: #d4af37;
+            color: #2e2e2e;
+        }
+        .bonus-section .fa-beer-mug-empty, .bonus-section .fa-fish {
+            color: #d4af37;
+            margin-right: 8px;
+        }
+        /* Parallax用コンテナ */
+        .parallax-container {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+        .parallax-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        /* モバイル対応: Parallax効果を最適化 */
+        @media screen and (max-width: 768px) {
+            .parallax-container img {
+                transform: scale(1.3);
+            }
+            .parallax-bg {
+                background-attachment: scroll;
+                background-size: cover;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- ナビゲーションバー -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">ロンドン観光ガイド</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -167,7 +192,7 @@
     </nav>
 
     <!-- ヒーローセクション -->
-    <div class="hero">
+    <div class="hero parallax-bg">
         <h1 class="display-4">ロンドン観光ガイド</h1>
         <p class="lead">歴史とモダンが交錯するロンドンの魅力をエリアごとにご紹介！</p>
     </div>
@@ -180,7 +205,9 @@
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img src="assets/images/euston.jpg" class="card-img-top" alt="Euston Station">
+                        <div class="parallax-container">
+                            <img src="assets/images/euston.jpg" class="card-img-top" alt="Euston Station" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Euston駅周辺</h5>
                             <p class="card-text">大英博物館やロンドン大学最寄りのラッセルスクウェアから近く、ホルボーンも徒歩圏内。治安も良く、古き良きロンドンを代表するエリア。</p>
@@ -191,7 +218,9 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img src="assets/images/pasty.jpg" class="card-img-top" alt="Cornish Pasty">
+                        <div class="parallax-container">
+                            <img src="assets/images/pasty.jpg" class="card-img-top" alt="Cornish Pasty" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">おすすめグルメ：コーニッスパスティ</h5>
                             <p class="card-text">コーンウォール地方の伝統食で、パイ生地に包まれた「労働者の弁当」。The Pasty Shop London Eustonで味わえます！</p>
@@ -221,7 +250,9 @@
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img src="assets/images/Covent_Garden_Jubilee_Market_Hall_(25846416697).jpg" class="card-img-top" alt="Covent Garden">
+                        <div class="parallax-container">
+                            <img src="assets/images/Covent_Garden_Jubilee_Market_Hall_(25846416697).jpg" class="card-img-top" alt="Covent Garden" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Covent Garden</h5>
                             <p class="card-text">SOHOの中華街やチャリングクロス駅、テムズ川散策に最適。治安も良く、Waterloo Bridgeの景色も楽しめます。</p>
@@ -232,10 +263,12 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img src="assets/images/gals.jpg" class="card-img-top" alt="GAIL's Bakery">
+                        <div class="parallax-container">
+                            <img src="assets/images/gals.jpg" class="card-img-top" alt="GAIL's Bakery" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">おすすめグルメ：GAIL's Bakery</h5>
-                            <p class="card-text">イギリス料理の誤解を覆す美味しいパン屋。カフェ併設で一休みに最適！</p>
+                            <p class="card-text">イギリス料理の誤解を覆す美味しいパン屋。カフェ併設で一休みに最適！新鮮なサンドイッチやペストリーは地元民にも人気。</p>
                             <p><strong>最寄り駅:</strong> Covent Garden駅（Piccadilly線）から徒歩約5分</p>
                             <a href="https://maps.app.goo.gl/Mk8YLKDtVbHriVTKA" class="btn map-btn" target="_blank">GAIL's Bakery</a>
                         </div>
@@ -264,7 +297,9 @@
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="card h-100">
-                        <img src="assets/images/hydepark.jpg" class="card-img-top" alt="Hyde Park">
+                        <div class="parallax-container">
+                            <img src="assets/images/hydepark.jpg" class="card-img-top" alt="Hyde Park" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Hyde Park</h5>
                             <p class="card-text">Marble ArchやKnightsbridgeからアクセス便利。乗馬をするセレブも見かける緑豊かな公園。薔薇園もおすすめ！</p>
@@ -275,7 +310,9 @@
                 </div>
                 <div class="col-md-6">
                     <div class="card h-100">
-                        <img src="assets/images/Royal_Albert_Hall_Exterior-min-1536x1024.jpg" class="card-img-top" alt="Royal Albert Hall">
+                        <div class="parallax-container">
+                            <img src="assets/images/Royal_Albert_Hall_Exterior-min-1536x1024.jpg" class="card-img-top" alt="Royal Albert Hall" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">ロイヤル・アルバート・ホール</h5>
                             <p class="card-text">クラシックからロックまで幅広い公演が行われる特別なホール。</p>
@@ -293,7 +330,9 @@
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="card h-100">
-                        <img src="assets/images/paddinton.jpg" class="card-img-top" alt="Paddington Station">
+                        <div class="parallax-container">
+                            <img src="assets/images/paddinton.jpg" class="card-img-top" alt="Paddington Station" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Paddington</h5>
                             <p class="card-text">パディントン駅を中心に、魅力的な路地が広がるエリア。南西部への路線が集まる。</p>
@@ -304,7 +343,9 @@
                 </div>
                 <div class="col-md-6">
                     <div class="card h-100">
-                        <img src="assets/images/paddinton-street.jpg" class="card-img-top" alt="Paddington Alley">
+                        <div class="parallax-container">
+                            <img src="assets/images/paddinton-street.jpg" class="card-img-top" alt="Paddington Alley" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">路地の風景</h5>
                             <p class="card-text">ロンドンらしい路地の風景が楽しめるエリア。</p>
@@ -322,7 +363,9 @@
             <div class="row g-4">
                 <div class="col-md-12">
                     <div class="card h-100">
-                        <img src="assets/images/camden.jpg" class="card-img-top" alt="Camden Town">
+                        <div class="parallax-container">
+                            <img src="assets/images/camden.jpg" class="card-img-top" alt="Camden Town" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Camden Town</h5>
                             <p class="card-text">運河沿いの古着屋が集まるエリア。観光客や地元民で賑わい、半日でも楽しめる！Carnaby Streetとのコントラストも魅力。最寄り駅はノーザンラインのCamden Town.</p>
@@ -341,7 +384,9 @@
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img src="assets/images/londoneye.jpg" class="card-img-top" alt="London Eye">
+                        <div class="parallax-container">
+                            <img src="assets/images/londoneye.jpg" class="card-img-top" alt="London Eye" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">London Eye</h5>
                             <p class="card-text">テムズ川沿いにそびえるヨーロッパ最大級の観覧車。ロンドンのパノラマビューを楽しむのに最適。夜のライトアップも見逃せません！</p>
@@ -352,7 +397,9 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img src="assets/images/tate.jpg" class="card-img-top" alt="Tate Modern">
+                        <div class="parallax-container">
+                            <img src="assets/images/tate.jpg" class="card-img-top" alt="Tate Modern" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Tate Modern</h5>
                             <p class="card-text">旧発電所を改装した現代美術館。ピカソやウォーホルなどの作品が展示され、無料で入場可能（特別展除く）。テムズ川沿いのロケーションも魅力。</p>
@@ -364,7 +411,9 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img src="assets/images/londonbridge.jpg" class="card-img-top" alt="London Bridge">
+                        <div class="parallax-container">
+                            <img src="assets/images/londonbridge.jpg" class="card-img-top" alt="London Bridge" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">London Bridge</h5>
                             <p class="card-text">テムズ川に架かる歴史的な橋で、ロンドンのランドマーク。周辺にはタワーブリッジやザ・シャードなど見どころ多数。夜のライトアップが美しい。</p>
@@ -375,7 +424,9 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img src="assets/images/borough.jpg" class="card-img-top" alt="Borough Market">
+                        <div class="parallax-container">
+                            <img src="assets/images/borough.jpg" class="card-img-top" alt="Borough Market" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Borough Market</h5>
                             <p class="card-text">1000年以上の歴史を持つロンドン最大の食品市場。新鮮な食材や世界各国の料理が楽しめる。午前10時から午後5時まで営業、午前中がおすすめ。</p>
@@ -394,7 +445,9 @@
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img src="assets/images/hampstead.jpg" class="card-img-top" alt="Hampstead Heath">
+                        <div class="parallax-container">
+                            <img src="assets/images/hampstead.jpg" class="card-img-top" alt="Hampstead Heath" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Hampstead Heath</h5>
                             <p class="card-text">高級住宅街にある散策に最適な公園。</p>
@@ -405,7 +458,9 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img src="assets/images/sherlock.jpg" class="card-img-top" alt="Sherlock Holmes Museum">
+                        <div class="parallax-container">
+                            <img src="assets/images/sherlock.jpg" class="card-img-top" alt="Sherlock Holmes Museum" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">シャーロック・ホームズ博物館</h5>
                             <p class="card-text">シャーロック・ホームズファン必見！</p>
@@ -416,7 +471,9 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img src="assets/images/abbey.jpg" class="card-img-top" alt="Abbey Road Studios">
+                        <div class="parallax-container">
+                            <img src="assets/images/abbey.jpg" class="card-img-top" alt="Abbey Road Studios" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">アビーロードスタジオ</h5>
                             <p class="card-text">ビートルズファン必見のスタジオ。シャーロック・ホームズ博物館と徒歩圏内。</p>
@@ -427,7 +484,9 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img src="assets/images/greenwich.webp" class="card-img-top" alt="Greenwich">
+                        <div class="parallax-container">
+                            <img src="assets/images/greenwich.webp" class="card-img-top" alt="Greenwich" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">グリニッジ</h5>
                             <p class="card-text">世界標準時の街。ユネスコ世界遺産の港町で、テムズ川沿いの下町風情が魅力。</p>
@@ -438,7 +497,9 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img src="assets/images/golders.jpg" class="card-img-top" alt="Golders Green">
+                        <div class="parallax-container">
+                            <img src="assets/images/golders.jpg" class="card-img-top" alt="Golders Green" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Golders Green</h5>
                             <p class="card-text">日本人在住者も多いエリア。著名人が眠る霊園あり。</p>
@@ -449,7 +510,9 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img src="assets/images/piccadilly.jpg" class="card-img-top" alt="Piccadilly Circus">
+                        <div class="parallax-container">
+                            <img src="assets/images/piccadilly.jpg" class="card-img-top" alt="Piccadilly Circus" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Piccadilly Circus</h5>
                             <p class="card-text">ロンドンの中心！銀座のような賑やかなエリア。</p>
@@ -460,7 +523,9 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img src="assets/images/portobello.jpg" class="card-img-top" alt="Portobello Road Market">
+                        <div class="parallax-container">
+                            <img src="assets/images/portobello.jpg" class="card-img-top" alt="Portobello Road Market" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">ポートベロー・ロード・マーケット</h5>
                             <p class="card-text">ノッティングヒルのアンティークマーケット。カムデンより落ち着いた雰囲気。公式サイトで営業時間やイベント情報をチェック！</p>
@@ -473,11 +538,13 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img src="assets/images/castle.jpg" class="card-img-top" alt="Bloomsbury Tavern">
+                        <div class="parallax-container">
+                            <img src="assets/images/castle.jpg" class="card-img-top" alt="Bloomsbury Tavern" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Bloomsbury Tavern</h5>
                             <p class="card-text">大英博物館から徒歩数分。ロンドン散策中にお腹が空いたときは、店の前の立ち飲みスペースでビールを飲んでいる人達が多いところに入れば当たり。おいしいよ！</p>
-                            <p><strong>最寄り駅:</strong> Holborn駅（Central、Piccadilly線）またはTottenham Court Road駅（Central、Northern線）から徒歩Approx 5分</p>
+                            <p><strong>最寄り駅:</strong> Holborn駅（Central、Piccadilly線）またはTottenham Court Road駅（Central、Northern線）から徒歩約5分</p>
                             <a href="https://maps.app.goo.gl/tteBwSbvuZYsKutY7" class="btn map-btn" target="_blank">地図を見る</a>
                         </div>
                     </div>
@@ -485,351 +552,344 @@
             </div>
         </section>
 
-<!-- ロンドン滞在時のTIPS -->
-<section id="london-tips" class="mb-5">
-    <h2 class="mb-4">ロンドン滞在時のTIPS</h2>
-    <div class="row g-4">
-        <div class="col-md-12">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">交通について</h5>
-                    <p class="card-text">
-                        ロンドン市内の移動はOyster Cardが断然おすすめ！地下鉄、バス、トラム、DLR、London Overground、TfL Rail、National Railの一部で利用可能です。<br>
-                        <ul>
-                            <li><strong>料金</strong>: £7のデポジットで購入、使い終わったら返金可能。1日の上限額（Daily Cap）はゾーン1-2で£8.10（2025年時点）。</li>
-                            <li><strong>ゾーン</strong>: 中心（ゾーン1）から外側（ゾーン9）まで。例: ゾーン1-3のピーク時片道は約£3.50。</li>
-                            <li><strong>その他</strong>: 非接触型カードやモバイル決済も可。Visitor Oyster Cardは観光客向けで便利。</li>
-                        </ul>
-                        詳細は<a href="https://tfl.gov.uk/fares/how-to-pay/oyster" target="_blank">TfL公式サイト</a>で確認してください。
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">ショッピング</h5>
-                    <p class="card-text">
-                        ロンドンのスーパーは品揃えが豊富で便利！TESCOはリーズナブル、Sainsbury’sは選択肢が豊富。<br>
-                        <ul>
-                            <li><strong>Waitrose</strong>: 高品質だがやや高価格。</li>
-                            <li><strong>Morrisons</strong>: コスパ重視。</li>
-                            <li><strong>Asda</strong>: 大型店舗で幅広い商品。</li>
-                            <li><strong>Lidl、Aldi</strong>: 格安ディスカウントストア。</li>
-                            <li><strong>Marks & Spencer（M&S）</strong>: 高品質な食品で贅沢に。</li>
-                            <li><strong>小型店</strong>: Tesco ExpressやSainsbury’s Localがエリアごとに点在。</li>
-                        </ul>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">Pubの楽しみ方</h5>
-                    <p class="card-text">
-                        Pubやカフェはカウンターで注文・支払いが基本。地元の人と気軽に交流できるチャンス！<br>
-                        <ul>
-                            <li><strong>文化</strong>: 一人で立ち寄っても、仲良くなった人にビールをおごられることも。お返しにビールを渡すと喜ばれます。</li>
-                            <li><strong>夜間の注意</strong>: 遅い時間はお酒の提供が制限される場合があるので、家で飲むのが無難。</li>
-                            <li><strong>おすすめ料理</strong>:
-                                <ul>
-                                    <li>Fish & Chips（£10-£14）: サクサクのタラとチップス、タルタルソースが定番。</li>
-                                    <li>Sunday Roast（£12-£18）: ローストビーフやラム、ヨークシャープディング付き。</li>
-                                    <li>Shepherd’s Pie（£9-£13）: ひき肉とマッシュポテトのグラタン風。</li>
-                                </ul>
-                            </li>
-                            <li><strong>ドリンク</strong>: クラフトビールや地元エール（£4-£5）が豊富。CAMRA推奨パブは高品質。</li>
-                        </ul>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">水について</h5>
-                    <p class="card-text">
-                        水選びもロンドン滞在のポイント！個人的なおすすめはBuxton Water。安曇野のようなクリアな味わいで£0.70-£1。<br>
-                        <ul>
-                            <li><strong>水道水</strong>: 飲用可能だが、カルキ臭が強い地域も。硬水で肌や髪に影響する場合あり。</li>
-                            <li><strong>ボトルウォーター</strong>:
-                                <ul>
-                                    <li>Evian（£0.80-£1.20）、Volvic（£0.70-£1）: 軟水を好む人に人気。</li>
-                                    <li>2リットルボトル（£1-£2）: スーパーやコンビニでコスパ良好。</li>
-                                </ul>
-                            </li>
-                            <li><strong>カフェやパブ</strong>: 無料のTap Waterを頼めるが、ミネラルウォーター指定だと£2-£3かかる場合も。</li>
-                        </ul>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">ビールについて</h5>
-                    <p class="card-text">
-                        イギリスはビール天国！Pubで地ビール（Local Beer）を試すのはおすすめ！<br>
-                        <ul>
-                            <li>ロンドン中心部から外れた、地元のおばちゃんがやっているような店では、テイスティングさせてもらえることも。</li>
-                            <li>そんな店は当たり！居心地の良さを堪能してみましょう。</li>
-                            <li><strong>人気の地ビール</strong>: Fuller’s London Pride、Beavertown Neck Oil、Camden Hells Lager（£4-£5）。</li>
-                        </ul>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-        <!-- おまけ情報：Fish & Chipsパブ -->
-        <section id="bonus-section" class="bonus-section mb-5">
-            <h2 class="mb-4">おまけ情報：Fish & Chipsが美味しいパブ20選</h2>
-            <div class="container">
-                <p class="mb-4">さらにロンドンのパブを探したい方には、<a href="https://www.timeout.com/london/bars-and-pubs/the-best-pubs-in-london" target="_blank">Timeout Londonのパブ特集</a>がおすすめ。エリアごとの名店や最新のトレンドが満載！</p>
-                <div class="accordion" id="pubAccordion">
-                    <!-- Canary Wharf -->
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="headingCanaryWharf">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCanaryWharf" aria-expanded="false" aria-controls="collapseCanaryWharf">
-                                Canary Wharf周辺
-                            </button>
-                        </h3>
-                        <div id="collapseCanaryWharf" class="accordion-collapse collapse" aria-labelledby="headingCanaryWharf" data-bs-parent="#pubAccordion">
-                            <div class="accordion-body">
-                                <div class="row g-4">
-                                    <div class="col-md-4">
-                                        <div class="card h-100">
-                                            <div class="card-body">
-                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Grapes</h5>
-                                                <p class="card-text"><strong>住所:</strong> 76 Narrow St, Limehouse, London E14 8BP<br>テムズ川沿いの歴史あるパブ（1583年創業）。新鮮なタラのFish & Chips（£12）はサクサクの衣と自家製タルタルソースが絶品。Young’sエール（£4.50）が人気。</p>
-                                                <a href="https://www.google.com/maps/place/The+Grapes/@51.5088,-0.0347,17z" class="btn" target="_blank">地図を見る</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card h-100">
-                                            <div class="card-body">
-                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Gun</h5>
-                                                <p class="card-text"><strong>住所:</strong> 27 Coldharbour, London E14 9NS<br>ドックランズのモダンなガストロパブ。Fish & Chips（£13）はハドック使用、モルトビネガーが効いた伝統的な味わい。クラフトビール（£5）が豊富。</p>
-                                                <a href="https://www.google.com/maps/place/The+Gun/@51.5010,-0.0060,17z" class="btn" target="_blank">地図を見る</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card h-100">
-                                            <div class="card-body">
-                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Narrow</h5>
-                                                <p class="card-text"><strong>住所:</strong> 44 Narrow St, Limehouse, London E14 8DP<br>Gordon Ramsay運営の川沿いパブ。Fish & Chips（£14）は新鮮な魚と手切りポテトが特徴。Fuller’sエール（£4.80）が手頃。</p>
-                                                <a href="https://www.google.com/maps/place/The+Narrow/@51.5090,-0.0350,17z" class="btn" target="_blank">地図を見る</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card h-100">
-                                            <div class="card-body">
-                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Ledger Building</h5>
-                                                <p class="card-text"><strong>住所:</strong> 4 Hertsmere Rd, London E14 4AL<br>Wetherspoon運営の広々としたパブ。Fish & Chips（£9）はコスパ抜群で、タラの大判フライが人気。ビールは£4から。</p>
-                                                <a href="https://www.google.com/maps/place/The+Ledger+Building/@51.5075,-0.0260,17z" class="btn" target="_blank">地図を見る</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card h-100">
-                                            <div class="card-body">
-                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Ferry House</h5>
-                                                <p class="card-text"><strong>住所:</strong> 26 Ferry St, London E14 3DT<br>Isle of Dogsのコミュニティパブ。Fish & Chips（£11）は地元で評判の軽い衣が特徴。Beavertownビール（£5）が揃う。</p>
-                                                <a href="https://www.google.com/maps/place/The+Ferry+House/@51.4930,-0.0110,17z" class="btn" target="_blank">地図を見る</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card h-100">
-                                            <div class="card-body">
-                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Hope and Anchor</h5>
-                                                <p class="card-text"><strong>住所:</strong> 14 New Crane Pl, London E1W 3TS<br>隠れ家的なパブで、Fish & Chips（£12）は地元産の魚を使用。CAMRA推薦のエール（£4.50）が魅力。</p>
-                                                <a href="https://www.google.com/maps/place/The+Hope+and+Anchor/@51.5030,-0.0450,17z" class="btn" target="_blank">地図を見る</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Waterloo -->
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="headingWaterloo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWaterloo" aria-expanded="false" aria-controls="collapseWaterloo">
-                                Waterloo周辺
-                            </button>
-                        </h3>
-                        <div id="collapseWaterloo" class="accordion-collapse collapse" aria-labelledby="headingWaterloo" data-bs-parent="#pubAccordion">
-                            <div class="accordion-body">
-                                <div class="row g-4">
-                                    <div class="col-md-4">
-                                        <div class="card h-100">
-                                            <div class="card-body">
-                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Anchor & Hope</h5>
-                                                <p class="card-text"><strong>住所:</strong> 36 The Cut, London SE1 8LP<br>Waterloo駅近くのガストロパブ。Fish & Chips（£13）はサクサクの衣と新鮮なタラが自慢。クラフトビール（£5）が豊富。</p>
-                                                <a href="https://www.google.com/maps/place/The+Anchor+%26+Hope/@51.5035,-0.1060,17z" class="btn" target="_blank">地図を見る</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card h-100">
-                                            <div class="card-body">
-                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Kings Arms</h5>
-                                                <p class="card-text"><strong>住所:</strong> 25 Roupell St, London SE1 8TB<br>静かな住宅街の伝統パブ。Fish & Chips（£11）は手頃で、モルトビネガーとマッシーピーズが付く。Fuller’sエール（£4.50）が人気。</p>
-                                                <a href="https://www.google.com/maps/place/The+Kings+Arms/@51.5040,-0.1110,17z" class="btn" target="_blank">地図を見る</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card h-100">
-                                            <div class="card-body">
-                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The White Hart</h5>
-                                                <p class="card-text"><strong>住所:</strong> 29 Cornwall Rd, London SE1 8TJ<br>Waterloo駅から徒歩5分のローカルパブ。Fish & Chips（£10）はコスパ良く、タルタルソースが評判。ビールは£4から。</p>
-                                                <a href="https://www.google.com/maps/place/The+White+Hart/@51.5030,-0.1100,17z" class="btn" target="_blank">地図を見る</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card h-100">
-                                            <div class="card-body">
-                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Windmill</h5>
-                                                <p class="card-text"><strong>住所:</strong> 86 The Cut, London SE1 8LW<br>劇場近くの活気あるパブ。Fish & Chips（£12）はハドックのふわっとした身が特徴。Young’sビール（£4.80）が手頃。</p>
-                                                <a href="https://www.google.com/maps/place/The+Windmill/@51.5025,-0.1070,17z" class="btn" target="_blank">地図を見る</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card h-100">
-                                            <div class="card-body">
-                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Fire Station</h5>
-                                                <p class="card-text"><strong>住所:</strong> 150 Waterloo Rd, London SE1 8SB<br>旧消防署を改装したモダンパブ。Fish & Chips（£13）は洗練された盛り付けで、クラフトビール（£5）と相性抜群。</p>
-                                                <a href="https://www.google.com/maps/place/The+Fire+Station/@51.5020,-0.1080,17z" class="btn" target="_blank">地図を見る</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card h-100">
-                                            <div class="card-body">
-                                                <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Wellington</h5>
-                                                <p class="card-text"><strong>住所:</strong> 81-83 Waterloo Rd, London SE1 8UD<br>Waterloo駅前のクラシックパブ。Fish & Chips（£11）はボリューム満点で、地元客に愛される。エール（£4.50）が豊富。</p>
-                                                <a href="https://www.google.com/maps/place/The+Wellington/@51.5030,-0.1090,17z" class="btn" target="_blank">地図を見る</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-<!-- その他 -->
-<div class="accordion-item">
-    <h3 class="accordion-header" id="headingOthers">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOthers" aria-expanded="false" aria-controls="collapseOthers">
-            その他のロンドンエリア
-        </button>
-    </h3>
-    <div id="collapseOthers" class="accordion-collapse collapse" aria-labelledby="headingOthers" data-bs-parent="#pubAccordion">
-        <div class="accordion-body">
+        <!-- ロンドン滞在時のTIPS -->
+        <section id="london-tips" class="mb-5">
+            <h2 class="mb-4">ロンドン滞在時のTIPS</h2>
             <div class="row g-4">
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-12">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Mayflower</h5>
-                            <p class="card-text"><strong>住所:</strong> 117 Rotherhithe St, London SE16 4NF<br>1620年創業の歴史的パブ。Fish & Chips（£12）は新鮮な魚と手切りポテトが魅力。CAMRAエール（£4.50）が人気。</p>
-                            <a href="https://www.google.com/maps/place/The+Mayflower/@51.5000,-0.0500,17z" class="btn" target="_blank">地図を見る</a>
+                            <h5 class="card-title">交通について</h5>
+                            <p class="card-text">
+                                ロンドン市内の移動はOyster Cardが断然おすすめ！地下鉄、バス、トラム、DLR、London Overground、TfL Rail、National Railの一部で利用可能です。<br>
+                                <ul>
+                                    <li><strong>料金</strong>: £7のデポジットで購入、使い終わったら返金可能。1日の上限額（Daily Cap）はゾーン1-2で£8.10（2025年時点）。</li>
+                                    <li><strong>ゾーン</strong>: 中心（ゾーン1）から外側（ゾーン9）まで。例: ゾーン1-3のピーク時片道は約£3.50。</li>
+                                    <li><strong>その他</strong>: 非接触型カードやモバイル決済も可。Visitor Oyster Cardは観光客向けで便利。</li>
+                                </ul>
+                                詳細は<a href="https://tfl.gov.uk/fares/how-to-pay/oyster" target="_blank">TfL公式サイト</a>で確認してください。
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-12">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title"><i class="fa-solid fa-fish"></i>The George Inn</h5>
-                            <p class="card-text"><strong>住所:</strong> 75 Borough High St, London SE1 1NH<br>シェイクスピア時代のパブ。Fish & Chips（£12）は伝統的なレシピで、地元客に評判。Greene Kingエール（£4.80）が手頃。</p>
-                            <a href="https://www.google.com/maps/place/The+George+Inn/@51.5040,-0.0900,17z" class="btn" target="_blank">地図を見る</a>
+                            <h5 class="card-title">ショッピング</h5>
+                            <p class="card-text">
+                                ロンドンのスーパーは品揃えが豊富で便利！TESCOはリーズナブル、Sainsbury’sは選択肢が豊富。<br>
+                                <ul>
+                                    <li><strong>Waitrose</strong>: 高品質だがやや高価格。</li>
+                                    <li><strong>Morrisons</strong>: コスパ重視。</li>
+                                    <li><strong>Asda</strong>: 大型店舗で幅広い商品。</li>
+                                    <li><strong>Lidl、Aldi</strong>: 格安ディスカウントストア。</li>
+                                    <li><strong>Marks & Spencer（M&S）</strong>: 高品質な食品で贅沢に。</li>
+                                    <li><strong>小型店</strong>: Tesco ExpressやSainsbury’s Localがエリアごとに点在。</li>
+                                </ul>
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-12">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Dog and Bell</h5>
-                            <p class="card-text"><strong>住所:</strong> 116 Prince St, London SE8 3JD<br>Deptfordのコミュニティパブ。Fish & Chips（£10）はコスパ良く、サクサクの衣が人気。エール（£4）が豊富。</p>
-                            <a href="https://www.google.com/maps/place/The+Dog+and+Bell/@51.4810,-0.0240,17z" class="btn" target="_blank">地図を見る</a>
+                            <h5 class="card-title">Pubの楽しみ方</h5>
+                            <p class="card-text">
+                                Pubやカフェはカウンターで注文・支払いが基本。地元の人と気軽に交流できるチャンス！<br>
+                                <ul>
+                                    <li><strong>文化</strong>: 一人で立ち寄っても、仲良くなった人にビールをおごられることも。お返しにビールを渡すと喜ばれます。</li>
+                                    <li><strong>夜間の注意</strong>: 遅い時間はお酒の提供が制限される場合があるので、家で飲むのが無難。</li>
+                                    <li><strong>おすすめ料理</strong>:
+                                        <ul>
+                                            <li>Fish & Chips（£10-£14）: サクサクのタラとチップス、タルタルソースが定番。</li>
+                                            <li>Sunday Roast（£12-£18）: ローストビーフやラム、ヨークシャープディング付き。</li>
+                                            <li>Shepherd’s Pie（£10-£15）: ひき肉とマッシュポテトのグラタン風。</li>
+                                            <li>Ploughman’s Lunch（£8-£12）: チーズ、ハム、ピクルスの盛り合わせ。</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </p>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Southampton Arms</h5>
-                            <p class="card-text"><strong>住所:</strong> 139 Highgate Rd, London NW5 1LE<br>Kentish Townの受賞歴あるパブ。Fish & Chips（£11）は地元産の魚を使用。クラフトビール（£5）が豊富。</p>
-                            <a href="https://www.google.com/maps/place/The+Southampton+Arms/@51.5540,-0.1380,17z" class="btn" target="_blank">地図を見る</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Faltering Fullback</h5>
-                            <p class="card-text"><strong>住所:</strong> 19 Perth Rd, London N4 3HB<br>Finsbury Parkのアイリッシュパブ。Fish & Chips（£12）はボリューム満点。ギネス（£4.80）と地元エールが人気。</p>
-                            <a href="https://www.google.com/maps/place/The+Faltering+Fullback/@51.5630,-0.1090,17z" class="btn" target="_blank">地図を見る</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Dove</h5>
-                            <p class="card-text"><strong>住所:</strong> 19 Upper Mall, London W6 9TA<br>Hammersmithの川沿いパブ。Fish & Chips（£13）は繊細な衣と新鮮なタラが特徴。Fuller’sエール（£4.50）が揃う。</p>
-                            <a href="https://www.google.com/maps/place/The+Dove/@51.4900,-0.2350,17z" class="btn" target="_blank">地図を見る</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Ship</h5>
-                            <p class="card-text"><strong>住所:</strong> 41 Jews Row, London SW18 1TB<br>Wandsworthのテムズ川沿いのパブ。Fish & Chips（£12）は地元で評判。Young’sビール（£4.80）が手頃。</p>
-                            <a href="https://www.google.com/maps/place/The+Ship/@51.4600,-0.1900,17z" class="btn" target="_blank">地図を見る</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fa-solid fa-fish"></i>The Alma Tavern</h5>
-                            <p class="card-text"><strong>住所:</strong> 95 Church Rd, London SE19 2TA<br>Crystal Palaceの地元パブ。Fish & Chips（£11）はシンプルで美味しい。エール（£4.50）が豊富。</p>
-                            <a href="https://www.google.com/maps/place/The+Alma+Tavern/@51.4170,-0.0780,17z" class="btn" target="_blank">地図を見る</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-        <!-- 地図セクション -->
-        <section id="map-section" class="mb-5">
-            <h2 class="mb-4">ロンドン観光スポット地図</h2>
-            <div class="card">
-                <div class="card-body">
-                    <iframe class="map-container" src="https://www.google.com/maps/d/embed?mid=1YeykksHy5kzRAz_k9P3vW3mboY77Y-0" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
     </div>
 
+<!-- ボーナスセクション -->
+    <section class="bonus-section parallax-bg">
+        <div class="container">
+            <h2>ロンドンのおすすめパブ19選</h2>
+
+            <!-- West London -->
+            <h3 class="mt-4">West London</h3>
+            <div class="row g-4">
+                <!-- The Churchill Arms -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-beer-mug-empty"></i> The Churchill Arms</h5>
+                            <p class="card-text">花で覆われた外観が特徴的なパブ。ウィンストン・チャーチル関連の装飾が楽しい。タイ料理も人気！</p>
+                            <p><strong>住所:</strong> 119 Kensington Church St, London W8 7LN<br>
+                               <strong>最寄り駅:</strong> Notting Hill Gate駅（Central、Circle、District線）から徒歩約5分</p>
+                            <a href="https://maps.app.goo.gl/6YgZ8kL8k6QzYvL47" class="btn" target="_blank">地図を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- The Windsor Castle -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-beer-mug-empty"></i> The Windsor Castle</h5>
+                            <p class="card-text">ケンジントンの伝統的なパブ。庭園でのビールとパブ料理が楽しめる。地元民に愛される場所。</p>
+                            <p><strong>住所:</strong> 114 Campden Hill Rd, London W8 7AR<br>
+                               <strong>最寄り駅:</strong> Notting Hill Gate駅（Central、Circle、District線）から徒歩約7分</p>
+                            <a href="https://maps.app.goo.gl/18QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- The Dove -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-beer-mug-empty"></i> The Dove</h5>
+                            <p class="card-text">ハマースミスのテムズ川沿いにあるパブ。歴史的な雰囲気と川の景色が魅力。ギネス世界記録の「最も狭いバー」がある。</p>
+                            <p><strong>住所:</strong> 19 Upper Mall, London W6 9TA<br>
+                               <strong>最寄り駅:</strong> Ravenscourt Park駅（District線）から徒歩約7分</p>
+                            <a href="https://maps.app.goo.gl/19QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- North London -->
+            <h3 class="mt-4">North London</h3>
+            <div class="row g-4">
+                <!-- The Spaniard’s Inn -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-beer-mug-empty"></i> The Spaniard’s Inn</h5>
+                            <p class="card-text">1597年創業の歴史あるパブ。ハムステッド・ヒース近くで、文学者や詩人が訪れたことでも有名。庭園での食事もおすすめ。</p>
+                            <p><strong>住所:</strong> Spaniards Rd, London NW3 7JJ<br>
+                               <strong>最寄り駅:</strong> Hampstead駅（Northern線）から徒歩約15分</p>
+                            <a href="https://maps.app.goo.gl/9QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- The Holly Bush -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-beer-mug-empty"></i> The Holly Bush</h5>
+                            <p class="card-text">ハムステッドの居心地の良いパブ。暖炉のある部屋で伝統的なパブ料理を楽しめる。</p>
+                            <p><strong>住所:</strong> 22 Holly Mount, London NW3 6SG<br>
+                               <strong>最寄り駅:</strong> Hampstead駅（Northern線）から徒歩約5分</p>
+                            <a href="https://maps.app.goo.gl/13QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Central London -->
+            <h3 class="mt-4">Central London</h3>
+            <div class="row g-4">
+                <!-- The Lamb & Flag -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-beer-mug-empty"></i> The Lamb & Flag</h5>
+                            <p class="card-text">コヴェント・ガーデンの隠れ家パブ。17世紀から続く雰囲気と、クラフトビールが人気。</p>
+                            <p><strong>住所:</strong> 33 Rose St, London WC2E 9EB<br>
+                               <strong>最寄り駅:</strong> Covent Garden駅（Piccadilly線）から徒歩約3分</p>
+                            <a href="https://maps.app.goo.gl/5QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- The Princess Louise -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-beer-mug-empty"></i> The Princess Louise</h5>
+                            <p class="card-text">ヴィクトリア朝の内装が美しいパブ。ホルボーン駅近くで、伝統的なパブ料理も楽しめる。</p>
+                            <p><strong>住所:</strong> 208 High Holborn, London WC1V 7EP<br>
+                               <strong>最寄り駅:</strong> Holborn駅（Central、Piccadilly線）から徒歩約3分</p>
+                            <a href="https://maps.app.goo.gl/7QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- The Old Bank of England -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-beer-mug-empty"></i> The Old Bank of England</h5>
+                            <p class="card-text">旧イングランド銀行の建物を利用した豪華なパブ。パイ料理が名物。</p>
+                            <p><strong>住所:</strong> 194 Fleet St, London EC4A 2LT<br>
+                               <strong>最寄り駅:</strong> Temple駅（District、Circle線）から徒歩約7分</p>
+                            <a href="https://maps.app.goo.gl/8QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- The Dog and Duck -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-beer-mug-empty"></i> The Dog and Duck</h5>
+                            <p class="card-text">ソーホーの小さなパブ。ジョージ・オーウェルが愛した場所として知られ、クラフトビールが豊富。</p>
+                            <p><strong>住所:</strong> 18 Bateman St, London W1D 3AJ<br>
+                               <strong>最寄り駅:</strong> Tottenham Court Road駅（Central、Northern線）から徒歩約5分</p>
+                            <a href="https://maps.app.goo.gl/10QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- The French House -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-beer-mug-empty"></i> The French House</h5>
+                            <p class="card-text">ソーホーのボヘミアンなパブ。第二次世界大戦中のフランス抵抗運動の拠点だった歴史を持つ。ワインも豊富。</p>
+                            <p><strong>住所:</strong> 49 Dean St, London W1D 5BG<br>
+                               <strong>最寄り駅:</strong> Leicester Square駅（Northern、Piccadilly線）から徒歩約5分</p>
+                            <a href="https://maps.app.goo.gl/15QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ye Olde Cheshire Cheese -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-beer-mug-empty"></i> Ye Olde Cheshire Cheese</h5>
+                            <p class="card-text">1667年に再建された歴史的なパブ。チャールズ・ディケンズやサミュエル・ジョンソンが訪れたことで知られる。地下のバーも魅力的。</p>
+                            <p><strong>住所:</strong> 145 Fleet St, London EC4A 2BU<br>
+                               <strong>最寄り駅:</strong> Temple駅（District、Circle線）から徒歩約7分</p>
+                            <a href="https://maps.app.goo.gl/4QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- South London -->
+            <h3 class="mt-4">South London</h3>
+            <div class="row g-4">
+                <!-- The George Inn -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-beer-mug-empty"></i> The George Inn</h5>
+                            <p class="card-text">ロンドン最古のパブの一つで、シェイクスピアの時代から存在。中庭でのビールは格別！</p>
+                            <p><strong>住所:</strong> 77 Borough High St, London SE1 1NH<br>
+                               <strong>最寄り駅:</strong> London Bridge駅（Jubilee、Northern線）から徒歩約5分</p>
+                            <a href="https://maps.app.goo.gl/3QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- The Anchor Bankside -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-beer-mug-empty"></i> The Anchor Bankside</h5>
+                            <p class="card-text">テムズ川沿いのパブで、シェイクスピアのグローブ座近く。屋外席からの景色が素晴らしい。</p>
+                            <p><strong>住所:</strong> 34 Park St, London SE1 9EF<br>
+                               <strong>最寄り駅:</strong> London Bridge駅（Jubilee、Northern線）から徒歩約7分</p>
+                            <a href="https://maps.app.goo.gl/9QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- The White Hart -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-beer-mug-empty"></i> The White Hart</h5>
+                            <p class="card-text">サウスロンドンの伝統的なパブ。地元民に愛され、ライブ音楽やクイズナイトが楽しめる。</p>
+                            <p><strong>住所:</strong> 96 Church Rd, London SE19 2EZ<br>
+                               <strong>最寄り駅:</strong> Crystal Palace駅（Overground、National Rail）から徒歩約10分</p>
+                            <a href="https://maps.app.goo.gl/12QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- The Mayflower -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-beer-mug-empty"></i> The Mayflower</h5>
+                            <p class="card-text">テムズ川沿いにあるパブで、ピルグリム・ファーザーズの歴史にちなむ。川を眺めながらのビールは最高！</p>
+                            <p><strong>住所:</strong> 117 Rotherhithe St, London SE16 4NF<br>
+                               <strong>最寄り駅:</strong> Rotherhithe駅（Overground）から徒歩約5分</p>
+                            <a href="https://maps.app.goo.gl/6QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- East London -->
+            <h3 class="mt-4">East London</h3>
+            <div class="row g-4">
+                <!-- The Grapes -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-beer-mug-empty"></i> The Grapes</h5>
+                            <p class="card-text">ライムハウスにあるチャールズ・ディケンズゆかりのパブ。テムズ川の景色とシーフードが魅力。</p>
+                            <p><strong>住所:</strong> 76 Narrow St, London E14 8BP<br>
+                               <strong>最寄り駅:</strong> Limehouse駅（DLR、National Rail）から徒歩約5分</p>
+                            <a href="https://maps.app.goo.gl/17QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- The Cutty Sark -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-beer-mug-empty"></i> The Cutty Sark</h5>
+                            <p class="card-text">グリニッジにあるパブで、テムズ川沿いの景色が楽しめる。クラフトビールとシーフードが人気。</p>
+                            <p><strong>住所:</strong> 4-6 Ballast Quay, London SE10 9PD<br>
+                               <strong>最寄り駅:</strong> Cutty Sark駅（DLR）から徒歩約7分</p>
+                            <a href="https://maps.app.goo.gl/16QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Belgravia -->
+            <h3 class="mt-4">Belgravia</h3>
+            <div class="row g-4">
+                <!-- The Grenadier -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-beer-mug-empty"></i> The Grenadier</h5>
+                            <p class="card-text">ベルグラビアの隠れ家パブ。幽霊が出るという噂も！ビーフ・ウェリントンが名物。</p>
+                            <p><strong>住所:</strong> 18 Wilton Row, London SW1X 7NR<br>
+                               <strong>最寄り駅:</strong> Hyde Park Corner駅（Piccadilly線）から徒歩約7分</p>
+                            <a href="https://maps.app.goo.gl/11QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- The Star Tavern -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-beer-mug-empty"></i> The Star Tavern</h5>
+                            <p class="card-text">ベルグラビアのクラシックなパブ。地元民や観光客に人気で、居心地の良い雰囲気が魅力。</p>
+                            <p><strong>住所:</strong> 6 Belgrave Mews West, London SW1X 8HT<br>
+                               <strong>最寄り駅:</strong> Hyde Park Corner駅（Piccadilly線）から徒歩約7分</p>
+                            <a href="https://maps.app.goo.gl/14QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- フッター -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>© 2025 SoySaurceTan. All rights reserved.</p>
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-0">© 2025 SoySourceTan. All rights reserved.</p>
+        </div>
     </footer>
 
-    <!-- Bootstrap 5.3.3 JS -->
+    <!-- スクリプト -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.6.2/dist/simpleParallax.min.js"></script>
 </body>
 </html>
