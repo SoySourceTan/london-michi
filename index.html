@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ロンドン観光ガイド</title>
+    <title>London-Walk</title>
     <!-- Bootstrap 5.3.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Google Fonts -->
@@ -28,13 +28,14 @@
         .navbar .nav-link:hover {
             color: #ffffff;
         }
+        .bg-darkgreen { background-color: #355e3b; }
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/thames.jpg');
-            background-size: cover;
+            background: linear-gradient(rgb(51 51 51 / 31%), rgb(0 0 0 / 67%)), url(assets/images/pic.jpg);
+            background-size: contain;
             background-position: center;
             background-attachment: fixed;
             color: #ffffff;
-            padding: 120px 0;
+            padding: 175px 0;
             text-align: center;
             font-family: 'Cinzel', serif;
             border-bottom: 3px solid #d4af37;
@@ -83,7 +84,7 @@
         }
         /* Bonus Section Styles */
         .bonus-section {
-            background: linear-gradient(rgba(53,94,59,0.1), rgba(53,94,59,0.1)), url('assets/images/darkgreen.jpg');
+            background: linear-gradient(rgba(53,94,59,0.1), rgba(53,94,59,0.1)), url('assets/images/thames.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -153,9 +154,14 @@
         }
         .parallax-container img {
             width: 100%;
-            height: 100%;
+            height: 120%; /* 画像を少し大きくして下部に余裕を持たせる */
             object-fit: cover;
             display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateY(0);
+            transition: transform 0.1s linear; /* スムーズな動き */
         }
         /* モバイル対応: Parallax効果を最適化 */
         @media screen and (max-width: 768px) {
@@ -167,13 +173,12 @@
                 background-size: cover;
             }
         }
-    </style>
-</head>
+    </style></head>
 <body>
     <!-- ナビゲーションバー -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">ロンドン観光ガイド</a>
+            <a class="navbar-brand" href="#">London-Walk</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -193,7 +198,7 @@
 
     <!-- ヒーローセクション -->
     <div class="hero parallax-bg">
-        <h1 class="display-4">ロンドン観光ガイド</h1>
+        <h1 class="display-4">London-Walk</h1>
         <p class="lead">歴史とモダンが交錯するロンドンの魅力をエリアごとにご紹介！</p>
     </div>
 
@@ -478,7 +483,11 @@
                             <h5 class="card-title">アビーロードスタジオ</h5>
                             <p class="card-text">ビートルズファン必見のスタジオ。シャーロック・ホームズ博物館と徒歩圏内。</p>
                             <p><strong>最寄り駅:</strong> St. John’s Wood駅（Jubilee線）から徒歩約5分</p>
+                            <a href="https://www.abbeyroad.com/crossing" class="btn map-btn" target="_blank">Abbey Road Crossing Camera</a>
                             <a href="https://maps.app.goo.gl/JrTeYoriwVEfeWPi7" class="btn map-btn" target="_blank">地図を見る</a>
+
+
+
                         </div>
                     </div>
                 </div>
@@ -807,10 +816,10 @@
 <!-- ボーナスセクション -->
     <section class="bonus-section parallax-bg">
         <div class="container">
-            <h2 class="bg-black text-light py-3">ロンドンのおすすめパブ19選</h2>
+            <h2 class="bg-black shadow border rounded-5 text-light py-3">ロンドンのおすすめパブ19選</h2>
 
             <!-- West London -->
-            <h3 class="mt-4 text-light">West London</h3>
+            <h3 class="mt-4 text-light bg-darkgreen p-3 rounded-5 border border-1">West London</h3>
             <div class="row g-4">
                 <!-- The Churchill Arms -->
                 <div class="col-md-4">
@@ -820,7 +829,7 @@
                             <p class="card-text">花で覆われた外観が特徴的なパブ。ウィンストン・チャーチル関連の装飾が楽しい。タイ料理も人気！</p>
                             <p><strong>住所:</strong> 119 Kensington Church St, London W8 7LN<br>
                                <strong>最寄り駅:</strong> Notting Hill Gate駅（Central、Circle、District線）から徒歩約5分</p>
-                            <a href="https://maps.app.goo.gl/6YgZ8kL8k6QzYvL47" class="btn" target="_blank">地図を見る</a>
+                            <a href="https://maps.app.goo.gl/eBa6dkja1mv5GVkj6" class="btn" target="_blank">地図を見る</a>
                         </div>
                     </div>
                 </div>
@@ -832,7 +841,7 @@
                             <p class="card-text">ケンジントンの伝統的なパブ。庭園でのビールとパブ料理が楽しめる。地元民に愛される場所。</p>
                             <p><strong>住所:</strong> 114 Campden Hill Rd, London W8 7AR<br>
                                <strong>最寄り駅:</strong> Notting Hill Gate駅（Central、Circle、District線）から徒歩約7分</p>
-                            <a href="https://maps.app.goo.gl/18QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                            <a href="https://maps.app.goo.gl/55vtqWRZoKUa6wy4A" class="btn" target="_blank">地図を見る</a>
                         </div>
                     </div>
                 </div>
@@ -844,14 +853,14 @@
                             <p class="card-text">ハマースミスのテムズ川沿いにあるパブ。歴史的な雰囲気と川の景色が魅力。ギネス世界記録の「最も狭いバー」がある。</p>
                             <p><strong>住所:</strong> 19 Upper Mall, London W6 9TA<br>
                                <strong>最寄り駅:</strong> Ravenscourt Park駅（District線）から徒歩約7分</p>
-                            <a href="https://maps.app.goo.gl/19QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                            <a href="https://maps.app.goo.gl/eQYbcuzRPSbPcAjT6" class="btn" target="_blank">地図を見る</a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- North London -->
-            <h3 class="mt-4 text-light">North London</h3>
+            <h3 class="mt-4 text-light bg-darkgreen p-3 rounded-5 border border-1">North London</h3>
             <div class="row g-4">
                 <!-- The Spaniard’s Inn -->
                 <div class="col-md-4">
@@ -861,7 +870,7 @@
                             <p class="card-text">1597年創業の歴史あるパブ。ハムステッド・ヒース近くで、文学者や詩人が訪れたことでも有名。庭園での食事もおすすめ。</p>
                             <p><strong>住所:</strong> Spaniards Rd, London NW3 7JJ<br>
                                <strong>最寄り駅:</strong> Hampstead駅（Northern線）から徒歩約15分</p>
-                            <a href="https://maps.app.goo.gl/9QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                            <a href="https://maps.app.goo.gl/z4vpeRS4twr9EmRE7" class="btn" target="_blank">地図を見る</a>
                         </div>
                     </div>
                 </div>
@@ -873,14 +882,14 @@
                             <p class="card-text">ハムステッドの居心地の良いパブ。暖炉のある部屋で伝統的なパブ料理を楽しめる。</p>
                             <p><strong>住所:</strong> 22 Holly Mount, London NW3 6SG<br>
                                <strong>最寄り駅:</strong> Hampstead駅（Northern線）から徒歩約5分</p>
-                            <a href="https://maps.app.goo.gl/13QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                            <a href="https://maps.app.goo.gl/kqCPpANaHFgovQGk7" class="btn" target="_blank">地図を見る</a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Central London -->
-            <h3 class="mt-4 text-light">Central London</h3>
+            <h3 class="mt-4 text-light bg-darkgreen p-3 rounded-5 border border-1">Central London</h3>
             <div class="row g-4">
                 <!-- The Ship Tavern -->
                 <div class="col-md-4">
@@ -890,7 +899,7 @@
                             <p class="card-text">ホルボーン駅近く、シャーロックホームズの時代より前から続くといわれている伝統的なPub。午前中は大英博物館、ランチにこちら、というプランもおすすめ。</p>
                             <p><strong>住所:</strong> 12 Gate St, London WC2A 3HP<br>
                                <strong>最寄り駅:</strong> Holborn駅（Central線、Piccadilly線）から徒歩約3分</p>
-                            <a href="https://maps.app.goo.gl/aMz1TZFsAHJ4K7oAA" class="btn" target="_blank">地図を見る</a>
+                            <a href="https://maps.app.goo.gl/bRsG4DNJ88kax2nL9" class="btn" target="_blank">地図を見る</a>
                         </div>
                     </div>
                 </div>
@@ -902,7 +911,7 @@
                             <p class="card-text">コヴェント・ガーデンの隠れ家パブ。17世紀から続く雰囲気と、クラフトビールが人気。</p>
                             <p><strong>住所:</strong> 33 Rose St, London WC2E 9EB<br>
                                <strong>最寄り駅:</strong> Covent Garden駅（Piccadilly線）から徒歩約3分</p>
-                            <a href="https://maps.app.goo.gl/5QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                            <a href="https://maps.app.goo.gl/Sh7kPcKc9CgxYPz57" class="btn" target="_blank">地図を見る</a>
                         </div>
                     </div>
                 </div>
@@ -914,7 +923,7 @@
                             <p class="card-text">ヴィクトリア朝の内装が美しいパブ。ホルボーン駅近くで、伝統的なパブ料理も楽しめる。</p>
                             <p><strong>住所:</strong> 208 High Holborn, London WC1V 7EP<br>
                                <strong>最寄り駅:</strong> Holborn駅（Central、Piccadilly線）から徒歩約3分</p>
-                            <a href="https://maps.app.goo.gl/7QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                            <a href="https://maps.app.goo.gl/QXcsnAqak56LLk2z8" class="btn" target="_blank">地図を見る</a>
                         </div>
                     </div>
                 </div>
@@ -926,7 +935,7 @@
                             <p class="card-text">旧イングランド銀行の建物を利用した豪華なパブ。パイ料理が名物。</p>
                             <p><strong>住所:</strong> 194 Fleet St, London EC4A 2LT<br>
                                <strong>最寄り駅:</strong> Temple駅（District、Circle線）から徒歩約7分</p>
-                            <a href="https://maps.app.goo.gl/8QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                            <a href="https://maps.app.goo.gl/9N1pFSp5mhVi213X6" class="btn" target="_blank">地図を見る</a>
                         </div>
                     </div>
                 </div>
@@ -938,7 +947,7 @@
                             <p class="card-text">ソーホーの小さなパブ。ジョージ・オーウェルが愛した場所として知られ、クラフトビールが豊富。</p>
                             <p><strong>住所:</strong> 18 Bateman St, London W1D 3AJ<br>
                                <strong>最寄り駅:</strong> Tottenham Court Road駅（Central、Northern線）から徒歩約5分</p>
-                            <a href="https://maps.app.goo.gl/10QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                            <a href="https://maps.app.goo.gl/QBebWbdwULoWNwZg8" class="btn" target="_blank">地図を見る</a>
                         </div>
                     </div>
                 </div>
@@ -950,7 +959,7 @@
                             <p class="card-text">ソーホーのボヘミアンなパブ。第二次世界大戦中のフランス抵抗運動の拠点だった歴史を持つ。ワインも豊富。</p>
                             <p><strong>住所:</strong> 49 Dean St, London W1D 5BG<br>
                                <strong>最寄り駅:</strong> Leicester Square駅（Northern、Piccadilly線）から徒歩約5分</p>
-                            <a href="https://maps.app.goo.gl/15QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                            <a href="https://maps.app.goo.gl/4JfzCtkvWbNkWWxP8" class="btn" target="_blank">地図を見る</a>
                         </div>
                     </div>
                 </div>
@@ -962,14 +971,14 @@
                             <p class="card-text">1667年に再建された歴史的なパブ。チャールズ・ディケンズやサミュエル・ジョンソンが訪れたことで知られる。地下のバーも魅力的。</p>
                             <p><strong>住所:</strong> 145 Fleet St, London EC4A 2BU<br>
                                <strong>最寄り駅:</strong> Temple駅（District、Circle線）から徒歩約7分</p>
-                            <a href="https://maps.app.goo.gl/4QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                            <a href="https://maps.app.goo.gl/ibPAUVLy5Tnd1Amt7" class="btn" target="_blank">地図を見る</a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- South London -->
-            <h3 class="mt-4 text-light">South London</h3>
+            <h3 class="mt-4 text-light bg-darkgreen p-3 rounded-5 border border-1">South London</h3>
             <div class="row g-4">
                 <!-- The George Inn -->
                 <div class="col-md-4">
@@ -979,7 +988,7 @@
                             <p class="card-text">ロンドン最古のパブの一つで、シェイクスピアの時代から存在。中庭でのビールは格別！</p>
                             <p><strong>住所:</strong> 77 Borough High St, London SE1 1NH<br>
                                <strong>最寄り駅:</strong> London Bridge駅（Jubilee、Northern線）から徒歩約5分</p>
-                            <a href="https://maps.app.goo.gl/3QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                            <a href="https://maps.app.goo.gl/ja9YbQTF7tZPoWRB6" class="btn" target="_blank">地図を見る</a>
                         </div>
                     </div>
                 </div>
@@ -991,7 +1000,7 @@
                             <p class="card-text">テムズ川沿いのパブで、シェイクスピアのグローブ座近く。屋外席からの景色が素晴らしい。</p>
                             <p><strong>住所:</strong> 34 Park St, London SE1 9EF<br>
                                <strong>最寄り駅:</strong> London Bridge駅（Jubilee、Northern線）から徒歩約7分</p>
-                            <a href="https://maps.app.goo.gl/9QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                            <a href="https://maps.app.goo.gl/vimrfmrXTBLSxfHf7" class="btn" target="_blank">地図を見る</a>
                         </div>
                     </div>
                 </div>
@@ -1003,7 +1012,7 @@
                             <p class="card-text">サウスロンドンの伝統的なパブ。地元民に愛され、ライブ音楽やクイズナイトが楽しめる。</p>
                             <p><strong>住所:</strong> 96 Church Rd, London SE19 2EZ<br>
                                <strong>最寄り駅:</strong> Crystal Palace駅（Overground、National Rail）から徒歩約10分</p>
-                            <a href="https://maps.app.goo.gl/12QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                            <a href="https://maps.app.goo.gl/9iGfw12k1CoFz3L89" class="btn" target="_blank">地図を見る</a>
                         </div>
                     </div>
                 </div>
@@ -1015,14 +1024,14 @@
                             <p class="card-text">テムズ川沿いにあるパブで、ピルグリム・ファーザーズの歴史にちなむ。川を眺めながらのビールは最高！</p>
                             <p><strong>住所:</strong> 117 Rotherhithe St, London SE16 4NF<br>
                                <strong>最寄り駅:</strong> Rotherhithe駅（Overground）から徒歩約5分</p>
-                            <a href="https://maps.app.goo.gl/6QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                            <a href="https://maps.app.goo.gl/a2qfCSmMsDRnZa8V7" class="btn" target="_blank">地図を見る</a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- East London -->
-            <h3 class="mt-4 text-light">East London</h3>
+            <h3 class="mt-4 text-light bg-darkgreen p-3 rounded-5 border border-1">East London</h3>
             <div class="row g-4">
                 <!-- The Grapes -->
                 <div class="col-md-4">
@@ -1032,7 +1041,7 @@
                             <p class="card-text">ライムハウスにあるチャールズ・ディケンズゆかりのパブ。テムズ川の景色とシーフードが魅力。</p>
                             <p><strong>住所:</strong> 76 Narrow St, London E14 8BP<br>
                                <strong>最寄り駅:</strong> Limehouse駅（DLR、National Rail）から徒歩約5分</p>
-                            <a href="https://maps.app.goo.gl/17QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                            <a href="https://maps.app.goo.gl/Zu6m7gByKpCMoPKi8" class="btn" target="_blank">地図を見る</a>
                         </div>
                     </div>
                 </div>
@@ -1044,14 +1053,14 @@
                             <p class="card-text">グリニッジにあるパブで、テムズ川沿いの景色が楽しめる。クラフトビールとシーフードが人気。</p>
                             <p><strong>住所:</strong> 4-6 Ballast Quay, London SE10 9PD<br>
                                <strong>最寄り駅:</strong> Cutty Sark駅（DLR）から徒歩約7分</p>
-                            <a href="https://maps.app.goo.gl/16QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                            <a href="https://maps.app.goo.gl/Dv1QUMCRt5izeC7b7" class="btn" target="_blank">地図を見る</a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Belgravia -->
-            <h3 class="mt-4 text-light">Belgravia</h3>
+            <h3 class="mt-4 text-light bg-darkgreen p-3 rounded-5 border border-1">Belgravia</h3>
             <div class="row g-4">
                 <!-- The Grenadier -->
                 <div class="col-md-4">
@@ -1061,7 +1070,7 @@
                             <p class="card-text">ベルグラビアの隠れ家パブ。幽霊が出るという噂も！ビーフ・ウェリントンが名物。</p>
                             <p><strong>住所:</strong> 18 Wilton Row, London SW1X 7NR<br>
                                <strong>最寄り駅:</strong> Hyde Park Corner駅（Piccadilly線）から徒歩約7分</p>
-                            <a href="https://maps.app.goo.gl/11QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                            <a href="https://maps.app.goo.gl/td6QdXoDJ4bGdAiD8" class="btn" target="_blank">地図を見る</a>
                         </div>
                     </div>
                 </div>
@@ -1073,7 +1082,7 @@
                             <p class="card-text">ベルグラビアのクラシックなパブ。地元民や観光客に人気で、居心地の良い雰囲気が魅力。</p>
                             <p><strong>住所:</strong> 6 Belgrave Mews West, London SW1X 8HT<br>
                                <strong>最寄り駅:</strong> Hyde Park Corner駅（Piccadilly線）から徒歩約7分</p>
-                            <a href="https://maps.app.goo.gl/14QzK6nZ9z9QzYvL47" class="btn" target="_blank">地図を見る</a>
+                            <a href="https://maps.app.goo.gl/DT4JLxLyTT5kgwEw9" class="btn" target="_blank">地図を見る</a>
                         </div>
                     </div>
                 </div>
